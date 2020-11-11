@@ -1,21 +1,26 @@
 import ImageApiSevice from './apiService';
+import teamplateHandlebars from './templates/image-card.hbs';
 
 const imegeApiSevice = new ImageApiSevice();
 
 const refs = {
   searchForm: document.querySelector('.search-form'),
+  imageGallery: document.querySelector('.gallery'),
 };
-
-console.dir(refs.searchForm);
 
 refs.searchForm.addEventListener('input', onSearch);
 
 function onSearch(event) {
   event.preventDefault();
 
-  serchQuery = refs.searchForm.elements.query.value;
+  const serchQuery = refs.searchForm.elements.query.value;
 
-  imegeApiSevice.fetchImages(serchQuery);
+  imegeApiSevice.fetchImages(serchQuery).then(imageMarkup);
 }
 
-console.dir(refs.searchForm.elements.query.value);
+function imageMarkup(images) {
+  refs.imageGallery.insertAdjacentHTML(
+    'beforeend',
+    teamplateHandlebars(images),
+  );
+}
