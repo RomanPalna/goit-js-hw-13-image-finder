@@ -9,4 +9,16 @@ export default class ImageApiSevice {
 
     return fetch(url).then(response => response.json());
   }
+
+  incrementPage() {
+    this.page += 1;
+  }
+
+  resetPage() {
+    this.page = 1;
+  }
+
+  get query() {
+    return this.searchQuery;
+  }
 }
