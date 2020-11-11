@@ -1,24 +1,24 @@
 {
-  "name": "goit-js-hw-10-food-service",
+  "name": "goit-js-hw-13-image-finder",
   "version": "1.0.0",
   "description": "food-service",
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url /goit-js-hw-10-food-service/",
+    "build": "parcel build src/index.html --public-url /goit-js-hw-13-image-finder/",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RomanPalna/goit-js-hw-10-food-service.git"
+    "url": "git+https://github.com/RomanPalna/goit-js-hw-13-image-finder.git"
   },
   "author": "Palna Roman",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RomanPalna/goit-js-hw-10-food-service/issues"
+    "url": "https://github.com/RomanPalna/goit-js-hw-13-image-finder/issues"
   },
-  "homepage": "https://RomanPalna.github.io/goit-js-hw-10-food-service",
+  "homepage": "https://RomanPalna.github.io/goit-js-hw-13-image-finder",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-custom-dist-structure": "^1.1.16",
