@@ -3,8 +3,6 @@ import teamplateHandlebars from './templates/image-card.hbs';
 
 const imegeApiSevice = new ImageApiSevice();
 
-console.log(imegeApiSevice.fetchImages);
-
 const refs = {
   searchForm: document.querySelector('.search-form'),
   imageGallery: document.querySelector('.gallery'),
@@ -16,19 +14,18 @@ refs.searchForm.addEventListener('input', onSearch);
 function onSearch(event) {
   event.preventDefault();
   refs.imageGallery.innerHTML = '';
-
-  fetchImages();
   imegeApiSevice.resetPage();
+  observerImg();
+}
+
+function fetchingImages() {
+  const serchQuery = refs.searchForm.elements.query.value;
+
+  imegeApiSevice.fetchImages(serchQuery).then(imageMarkup);
 
   if (!serchQuery) {
     return;
   }
-}
-
-function fetchImages() {
-  const serchQuery = refs.searchForm.elements.query.value;
-
-  imegeApiSevice.fetchImages(serchQuery).then(imageMarkup);
 }
 
 function imageMarkup(images) {
@@ -38,16 +35,18 @@ function imageMarkup(images) {
   );
 }
 
-const onEntry = entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && imegeApiSevice.query !== '') {
-      imegeApiSevice.incrementPage();
-      fetchImages();
-    }
-  });
-};
+function observerImg() {
+  const onEntry = entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && imegeApiSevice.query !== '') {
+        imegeApiSevice.incrementPage();
+        fetchingImages();
+      }
+    });
+  };
 
-const observer = new IntersectionObserver(onEntry, {
-  rootMargin: '150px',
-});
-observer.observe(refs.terminator);
+  const observer = new IntersectionObserver(onEntry, {
+    rootMargin: '150px',
+  });
+  observer.observe(refs.terminator);
+}
