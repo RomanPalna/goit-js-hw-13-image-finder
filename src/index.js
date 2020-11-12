@@ -50,3 +50,5 @@ function observerImg() {
   });
   observer.observe(refs.terminator);
 }
+
+//Modal window
