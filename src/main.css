@@ -3,7 +3,8 @@ ul {
 }
 
 body {
-  max-width: 1200px;
+  position: absolute;
+  width: 1200px;
   padding-left: 40px;
   padding-right: 40px;
   margin-left: auto;
@@ -17,4 +18,10 @@ body {
 
 .photo-card {
   padding: 20px;
+}
+
+.home {
+  position: fixed;
+  right: 25px;
+  top: 90%;
 }
