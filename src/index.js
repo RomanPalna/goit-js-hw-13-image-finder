@@ -38,7 +38,7 @@ function imageMarkup(images) {
 function observerImg() {
   const onEntry = entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && imegeApiSevice.query !== '') {
+      if (entry.isIntersecting) {
         imegeApiSevice.incrementPage();
         fetchingImages();
       }
