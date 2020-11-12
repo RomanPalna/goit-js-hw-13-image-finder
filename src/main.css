@@ -27,5 +27,16 @@ body {
 .home {
   position: fixed;
   right: 25px;
-  top: 90%;
+  top: 80%;
+  background-image: url(/images/up.svg);
+  background-repeat: no-repeat;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  text-align: end;
+}
+.stats-item:not(:last-child) {
+  margin-right: 10px;
 }
