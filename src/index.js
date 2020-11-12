@@ -25,12 +25,8 @@ function onSearch(event) {
   }
 }
 
-<<<<<<< Updated upstream
 function fetchImages() {
   const serchQuery = refs.searchForm.elements.query.value;
-=======
-  searchQuery = refs.searchForm.elements.query.value;
->>>>>>> Stashed changes
 
   imegeApiSevice.fetchImages(serchQuery).then(imageMarkup);
 }
@@ -45,8 +41,8 @@ function imageMarkup(images) {
 const onEntry = entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting && imegeApiSevice.query !== '') {
-      fetchImages();
       imegeApiSevice.incrementPage();
+      fetchImages();
     }
   });
 };
