@@ -3,6 +3,8 @@ import teamplateHandlebars from './templates/image-card.hbs';
 
 const imegeApiSevice = new ImageApiSevice();
 
+console.log(imegeApiSevice.fetchImages);
+
 const refs = {
   searchForm: document.querySelector('.search-form'),
   imageGallery: document.querySelector('.gallery'),
@@ -23,8 +25,12 @@ function onSearch(event) {
   }
 }
 
+<<<<<<< Updated upstream
 function fetchImages() {
   const serchQuery = refs.searchForm.elements.query.value;
+=======
+  searchQuery = refs.searchForm.elements.query.value;
+>>>>>>> Stashed changes
 
   imegeApiSevice.fetchImages(serchQuery).then(imageMarkup);
 }
