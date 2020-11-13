@@ -40,8 +40,8 @@ function observerImg() {
   const onEntry = entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        imegeApiSevice.incrementPage();
         fetchingImages();
+        imegeApiSevice.incrementPage();
       }
     });
   };
