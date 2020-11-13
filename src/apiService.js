@@ -1,6 +1,6 @@
 export default class ImageApiSevice {
   constructor() {
-    this.page = 1;
+    this.page = 0;
     this.searchQuery = '';
   }
 
