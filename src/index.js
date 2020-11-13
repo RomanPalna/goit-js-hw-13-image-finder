@@ -1,5 +1,6 @@
 import ImageApiSevice from './apiService';
 import teamplateHandlebars from './templates/image-card.hbs';
+import debounce from 'lodash.debounce';
 
 const imegeApiSevice = new ImageApiSevice();
 
@@ -9,7 +10,7 @@ const refs = {
   terminator: document.querySelector('.terminator'),
 };
 
-refs.searchForm.addEventListener('input', onSearch);
+refs.searchForm.addEventListener('input', debounce(onSearch, 1000));
 
 function onSearch(event) {
   event.preventDefault();
