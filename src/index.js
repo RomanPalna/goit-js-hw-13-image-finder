@@ -19,14 +19,14 @@ function onSearch(event) {
   observerImg();
 }
 
-function fetchingImages() {
+async function fetchingImages(images) {
   const serchQuery = refs.searchForm.elements.query.value;
 
-  imegeApiSevice.fetchImages(serchQuery).then(imageMarkup);
+  // imegeApiSevice.fetchImages(serchQuery).then(imageMarkup);
+  const fetchImg = await imegeApiSevice.fetchImages(serchQuery);
+  const markup = await imageMarkup(fetchImg);
 
-  if (!serchQuery) {
-    return;
-  }
+  return markup;
 }
 
 function imageMarkup(images) {
